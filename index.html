@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlexyTracker Overlay</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;height:100%;background:transparent;font-family:Segoe UI,Arial,sans-serif;color:#fff;overflow:hidden}
+#bar{height:34px;display:flex;align-items:center;gap:8px;padding:0 8px 0 12px;background:rgba(18,20,26,.96);border:1px solid rgba(255,255,255,.15);border-bottom:0;border-radius:10px 10px 0 0;user-select:none}
+#drag{flex:1;font-size:12px;font-weight:700;letter-spacing:.3px;-webkit-app-region:drag}
+button{border:0;color:#fff;background:rgba(255,255,255,.12);border-radius:5px;width:25px;height:23px;cursor:pointer;font-size:13px}button:hover{background:rgba(255,255,255,.25)}#close:hover{background:#b8323c}
+#site{height:calc(100% - 34px);overflow:hidden;background:rgba(18,20,26,.93);border:1px solid rgba(255,255,255,.15);border-top:0;border-radius:0 0 10px 10px}
+iframe{width:100%;height:100%;border:0;background:#11141b}#hint{position:absolute;right:8px;bottom:7px;font-size:10px;color:rgba(255,255,255,.48);pointer-events:none}
+</style></head>
+<body>
+<div id="bar"><div id="drag">FLEXYTRACKER · OVERLAY</div><button id="reload" title="Recargar">↻</button><button id="pin" title="Activar/desactivar siempre visible">◆</button><button id="min" title="Minimizar">—</button><button id="close" title="Cerrar">×</button></div>
+<div id="site"><iframe id="tracker" src="https://flexytracker.netlify.app/" allow="clipboard-read; clipboard-write"></iframe></div>
+<div id="hint">Arrastra desde la barra superior · Redimensiona desde los bordes</div>
+<script>
+const c=window.overlayControls;document.getElementById('reload').onclick=()=>document.getElementById('tracker').src='https://flexytracker.netlify.app/';document.getElementById('pin').onclick=()=>c.toggleAlwaysOnTop();document.getElementById('min').onclick=()=>c.minimize();document.getElementById('close').onclick=()=>c.close();c.onReload(()=>document.getElementById('tracker').src='https://flexytracker.netlify.app/');
+</script></body></html>

@@ -1,0 +1,15 @@
+COMO OBTENER EL .EXE (SIN INSTALAR NODE.JS EN TU PC)
+
+1. Entra en https://github.com/new e inicia sesión.
+2. Crea un repositorio llamado flexytracker-overlay (puede ser privado).
+3. Descomprime este ZIP en tu PC.
+4. En el repositorio de GitHub, pulsa Add file > Upload files.
+5. Arrastra TODO el contenido de la carpeta flexytracker-overlay, incluida la carpeta .github.
+   Si Windows no muestra .github, activa la visualización de archivos ocultos.
+6. Pulsa Commit changes.
+7. Abre la pestaña Actions y habilita GitHub Actions si GitHub lo solicita.
+8. Se ejecutará el flujo Build Windows EXE. Cuando termine en verde, entra en esa ejecución.
+9. En la parte inferior, descarga el artefacto FlexyTracker-Overlay-Windows.
+10. Descomprime el artefacto y ejecuta FlexyTracker-Overlay-Setup-1.0.0.exe.
+
+No necesitas ejecutar comandos ni instalar Node.js en tu ordenador: GitHub compila el .exe.
